@@ -1,0 +1,24 @@
+<!--pages/register/register.wxml-->
+<view class='container2'>
+  <view class='title'>
+    <text>注册用户</text>
+  </view>
+  <form bindsubmit='onSubmit'>
+    <view>
+      <text>用户信息</text>
+      <input class='input-account' placeholder='请输入用户名' name='account' focus='true' />
+      <input placeholder='请输入手机号' name='tel' type='number' />
+    </view>
+    <view>
+      <text>密码</text>
+      <input class='input-pwd' password='true' placeholder='请输入密码' name='pwd1' />
+      <input class='input-pwd' password='true' placeholder='请确认密码' name='pwd2' />
+    </view>
+    <view class='button'>
+      <button type='primary' form-type='submit'>注册</button>
+    </view>
+  </form>
+  <view class='login'>
+    <text bindtap='login'>已经注册？请登录</text>
+  </view>
+</view>

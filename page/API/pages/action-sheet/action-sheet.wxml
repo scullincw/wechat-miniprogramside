@@ -1,0 +1,24 @@
+<!--pages/user/applyToMember/applyToMember.wxml-->
+<view class="page-body">
+  <form  bindsubmit='onSubmit'>
+    <view class="page-section">
+    <view class="weui-cells__title">申请人姓名</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" placeholder="请输入姓名" name="name" focus="true" />
+      </view>
+    </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">申请理由</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" type="text" placeholder="请输入请假理由" name="message"/>
+        </view>
+      </view>
+    </view>
+    <view class='button'>
+      <button type='primary' form-type='submit'>提交</button>
+    </view>
+  </form>
+</view>

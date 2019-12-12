@@ -1,0 +1,31 @@
+@import "../common/index.wxss";
+
+.weui-agree__link {
+  display: inline;
+  color: #586c94;
+}
+
+.block {
+margin-bottom: 23rpx;
+padding: 50rpx 20rpx;
+background-color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+text {
+font-size: 18px;
+margin: 0rpx 30rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.right-arrow {
+height: 22px;
+width: 22px;
+
+}

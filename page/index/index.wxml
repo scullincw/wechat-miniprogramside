@@ -1,0 +1,3 @@
+<!--index.wxml-->
+<image class='logo' src='../../image/logo.PNG'></image>
+<button type='primary' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>获取手机号登录</button>

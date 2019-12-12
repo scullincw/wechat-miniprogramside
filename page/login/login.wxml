@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view class='container2'>
+  <view class='title'>
+    <text>登录</text>
+  </view>
+  <form bindsubmit='onSubmit'>
+    <view>
+      <text>手机号</text>
+      <input value="13715134061" placeholder='请输入手机号' name='tel' focus='true' type='number' />
+    </view>
+    <view>
+      <text>密码</text>
+      <input value="88888888" password='true' placeholder='请输入密码' name='pwd' />
+    </view>
+    <view class='button'>
+      <button type='primary' form-type='submit'>登录</button>
+    </view>
+  </form>
+  <view class='register'>
+    <text bindtap='register'>注册用户</text>
+  </view>
+</view>

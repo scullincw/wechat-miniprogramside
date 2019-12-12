@@ -1,0 +1,18 @@
+
+@import "../../../weui/components/weui-wxss/dist/style/weui.wxss";
+
+page {
+  background-color: #F8F8F8;
+}
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+
+input {
+  padding: 10rpx;
+}
+
+button {
+  margin: 40rpx;
+}

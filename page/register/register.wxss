@@ -1,0 +1,11 @@
+/* pages/register/register.wxss */
+@import "../login/login.wxss";
+
+
+.input-account, .input-pwd {
+  margin-bottom: 8px;
+}
+.login {
+  margin: 8px;
+  text-decoration: underline;
+}
