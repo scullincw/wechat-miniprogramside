@@ -1,5 +1,9 @@
 @import "../common/index.wxss";
 
+.welcome {
+  margin-right: 30rpx;
+}
+
 .weui-agree__link {
   display: inline;
   color: #586c94;

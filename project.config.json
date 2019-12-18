@@ -55,16 +55,16 @@
 			"current": -1,
 			"list": [
 				{
-					"id": 0,
-					"name": "page/API/index",
-					"pathName": "page/API/index",
+					"id": -1,
+					"name": "请假申请",
+					"pathName": "page/API/pages/action-sheet/action-sheet",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "请假申请",
-					"pathName": "page/API/pages/action-sheet/action-sheet",
+					"id": 1,
+					"name": "我的",
+					"pathName": "page/cloud/index",
 					"query": "",
 					"scene": null
 				}

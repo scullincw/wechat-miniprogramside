@@ -7,6 +7,8 @@ Page({
   },
 
   data: {
+    username: '', //微信用户昵称
+    avatarUrl: '',  //微信用户头像图片链接地址
     list: [
       {
         id: 'user',
@@ -55,6 +57,15 @@ Page({
     }
     this.setData({
       list
+    })
+  },
+
+  onLoad() {
+    var userInfo = wx.getStorageSync('userInfo')
+    //console.log(userInfo)
+    this.setData({
+      username: userInfo.nickName,
+      avatarUrl: userInfo.avatarUrl
     })
   },
 })

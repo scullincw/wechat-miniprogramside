@@ -1,7 +1,7 @@
 <view class="index">
   <view class="block" id="info">
-    <image class="avatar" src="../../image/icon_kongbaitouxiang.png" mode="aspectFill" bindtap="onUpload"></image>
-    <text class='welcome'>手机用户{{phone}}</text>
+    <image class="avatar" src="{{avatarUrl}}" mode="aspectFill" bindtap="onUpload"></image>
+    <text class='welcome'>微信用户 {{username}}</text>
   </view>
   <view class="index-bd">
     <view class="kind-list">
