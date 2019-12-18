@@ -1,0 +1,20 @@
+/* page/component/pages/edit/edit.wxss */
+.main {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textareaType1{
+  margin: 20rpx;
+  height:250rpx;
+  border: 1px solid rgb(214, 212, 212);
+  border-radius: 10rpx;
+}
+.textareaType2{
+  margin: 20rpx;
+  height:50rpx;
+  border: 1px solid rgb(214, 212, 212);
+  border-radius: 10rpx;
+}

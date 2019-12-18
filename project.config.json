@@ -22,7 +22,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
-	"appid": "wx6ce7f884fc250487",
+	"appid": "wx30a867237d99325e",
 	"projectname": "%E7%A7%BB%E5%8A%A8%E5%8A%9E%E5%85%AC",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -66,6 +66,26 @@
 					"name": "我的",
 					"pathName": "page/cloud/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/component/pages/edit/edit",
+					"pathName": "page/component/pages/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/API/pages/bluetooth/bluetooth",
+					"pathName": "page/API/pages/bluetooth/bluetooth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/cloud/pages/crud/crud",
+					"pathName": "page/cloud/pages/crud/crud",
 					"scene": null
 				}
 			]

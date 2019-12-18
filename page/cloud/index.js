@@ -14,28 +14,12 @@ Page({
         id: 'user',
         name: '我的申请',
         open: false,
-        pages: [
-          {
-            zh: '获取 OpenID',
-            url: 'user-authentication/user-authentication'
-          }
-        ]
+        url: 'user-authentication/user-authentication'
       }, {
         id: 'database',
-        name: '设置',
+        name: '关于',
         open: false,
-        pages: [
-          {
-            zh: '基本操作',
-            url: 'crud/crud'
-          }, {
-            zh: '权限管理',
-            url: 'db-permission/db-permission'
-          }, {
-            zh: '服务端时间',
-            url: 'server-date/server-date'
-          }
-        ]
+        url: 'crud/crud'
       }
     ],
   },

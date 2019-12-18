@@ -1,38 +1,87 @@
-const app = getApp()
-
+var util = require('../../../../util/util.js');
 Page({
-  onShareAppMessage() {
-    return {
-      title: '用户鉴权',
-      path: 'page/cloud/pages/user-authentication/user-authentication'
-    }
-  },
+  onShow() {
 
+  },
   data: {
-    openid: '',
-    loading: false
+    list: [
+      {
+        id: 'view',
+        name: '申请1...',
+        open: false,
+        isRead: false,
+        //pages: ['view', 'scroll-view', 'swiper', 'movable-view', 'cover-view']
+      }, {
+        id: 'content',
+        name: '申请2...',
+        open: false,
+        isRead: false,
+        //pages: ['text', 'icon', 'progress', 'rich-text']
+      }, {
+        id: 'form',
+        name: '申请3...',
+        open: false,
+        isRead: false,
+        //pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'picker-view', 'radio', 'slider', 'switch', 'textarea', 'editor']
+      }, {
+        id: 'nav',
+        name: '申请4...',
+        open: false,
+        isRead: false,
+        //pages: ['navigator']
+      }, {
+        id: 'media',
+        name: '申请5...',
+        open: false,
+        isRead: false,
+        //pages: ['image', 'audio', 'video', 'camera']
+      }, {
+        id: 'map',
+        name: '申请6...',
+        open: false,
+        isRead: false,
+        //pages: ['map']
+      }, {
+        id: 'canvas',
+        name: '申请7...',
+        open: false,
+        isRead: false,
+        //pages: ['canvas']
+      }, {
+        id: 'open',
+        name: '申请8...',
+        open: false,
+        isRead: false,
+        //pages: ['ad', 'open-data', 'web-view']
+      }
+    ]
   },
 
-  onGetOpenid() {
-    this.setData({
-      loading: true
-    })
-    app.getUserOpenIdViaCloud()
-      .then(openid => {
-        this.setData({
-          openid,
-          loading: false
-        })
-        return openid
-      })
-      .catch(err => {
-        console.error(err)
-      })
+  /*下拉刷新 */
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    //模拟加载
+    setTimeout(function () {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
   },
 
-  clear() {
+  kindToggle(e) {
+    const id = e.currentTarget.id
+    const list = this.data.list
+    for (let i = 0, len = list.length; i < len; ++i) {
+      if (list[i].id === id) {
+        list[i].open = !list[i].open
+        list[i].isRead = true
+      } else {
+        list[i].open = false
+      }
+    }
     this.setData({
-      openid: '',
+      list
     })
+    wx.reportAnalytics('click_view_programmatically', {})
   }
 })

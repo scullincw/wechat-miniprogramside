@@ -1,10 +1,22 @@
-@import "../../../common/lib/weui.wxss";
+@import "../../../common/index.wxss";
 
-.page-body-info {
-  padding: 30rpx 0 30rpx 0;
+.weui-agree__link {
+  display: inline;
+  color: #586c94;
 }
 
-.page-body-text {
-  padding: 0 30rpx;
-  text-align: center;
+.kind-list-img{
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.font1{
+  margin-top: 20rpx;
+  color: #888888;
+  font-size: 58rpx;
+}
+
+.logo{
+  height: 200rpx;
+  width: 400rpx;
 }

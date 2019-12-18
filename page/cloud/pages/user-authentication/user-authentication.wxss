@@ -1,12 +1,28 @@
-.page-body-info {
-  padding-bottom: 0;
-  height: 230px;
+@import "../../../weui/components/weui-wxss/dist/style/weui.wxss";
+@import "../../../common/index.wxss";
+
+page {
+  background-color: #F8F8F8;
 }
-.page-body-text {
-  padding: 0 30rpx;
-  text-align: center;
+
+.page-section{
+  margin-bottom: 20rpx;
 }
-.openid {
-  margin-top: 20rpx;
-  font-size: 38rpx;
+
+input {
+  padding: 10rpx;
+}
+
+button {
+  margin: 40rpx;
+}
+
+.weui-agree__link {
+  display: inline;
+  color: #586c94;
+}
+
+.kind-list-img{
+  width: 15rpx;
+  height: 15rpx;
 }

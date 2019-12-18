@@ -1,5 +1,5 @@
-
 @import "../../../weui/components/weui-wxss/dist/style/weui.wxss";
+@import "../../../common/index.wxss";
 
 page {
   background-color: #F8F8F8;
@@ -15,4 +15,14 @@ input {
 
 button {
   margin: 40rpx;
+}
+
+.weui-agree__link {
+  display: inline;
+  color: #586c94;
+}
+
+.kind-list-img{
+  width: 15rpx;
+  height: 15rpx;
 }

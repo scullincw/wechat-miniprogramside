@@ -1,0 +1,6 @@
+<!--page/component/pages/edit/edit.wxml-->
+<view class="main">
+  <textarea class="textareaType2" placeholder="请输入公告标题..." placeholder-style="font-size:35rpx" auto-focus="true"></textarea>
+  <textarea class="textareaType1" placeholder="请输入公告内容..." placeholder-style="font-size:35rpx" auto-focus="true"></textarea>
+  <button type="primary">提交</button>
+</view>

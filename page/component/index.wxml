@@ -1,7 +1,10 @@
 <view class="index">
   <view class="index-hd">
     <image class="index-logo" src="resources/kind/logo.png"></image>
-    <view>{{time}}</view>
+    <view>{{date}}</view>
+  </view>
+  <view>
+    <button type="default" bindtap="goToEditPage">编辑公告</button>
   </view>
   <view class="index-bd">
     <view class="kind-list">
