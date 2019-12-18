@@ -6,19 +6,25 @@
   <view>
     <button type="default" bindtap="goToEditPage">编辑公告</button>
   </view>
+
   <view class="index-bd">
     <view class="kind-list">
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <block wx:for-items="{{billboardList}}" wx:key="{{item.id}}">
         <view class="kind-list-item">
           <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
-            <view class="kind-list-text">{{item.name}}</view>
+            <view class="kind-list-text">{{item.billboardTitle}}</view>
             <view wx:if="{{!item.isRead}}">
               <image class="kind-list-img" src="resources/kind/messageNo.png"></image>
             </view>
           </view>
           <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
             <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
-              <textarea>公告内容...</textarea>
+              <view>
+                时间：{{item.createTime}}
+              </view>
+              <view>
+                {{item.billboardContent}}
+              </view>
             </view>
           </view>
         </view>

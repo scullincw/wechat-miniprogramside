@@ -9,3 +9,15 @@
   width: 15rpx;
   height: 15rpx;
 }
+
+.navigator-box {
+  padding: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start
+}
+
+.navigator-box > view {
+  margin: 10rpx;
+}

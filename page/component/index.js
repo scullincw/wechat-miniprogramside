@@ -1,68 +1,55 @@
 var util = require('../../util/util.js');
+const app = getApp()
+
+
 Page({
-  onShow() {
-    
-  },
-  
   onLoad: function () {
     let date = new Date()
     this.setData({
       date: date.getFullYear() + "年" + date.getMonth() + "月" + date.getDay() + "日"
     })
-    console.log(date)
+    
+    app.post(
+      'getBillboard',
+      {
+        openid: wx.getStorageSync('openid'),
+        skey: wx.getStorageSync('skey'),
+        currentPageNum: 1,
+        rowsPerPage: 5
+      }
+    )
+    .then(res => {
+      //请求成功
+      //console.log(res.data)
+
+      //将公告列表存到本地
+      this.setData({
+        billboardList: res.data.data
+      })
+      let list = this.data.billboardList
+      for(let i = 0; i < list.length; i++) {
+        let item = list[i]
+        var time = item.createTime
+        time = time.substring(0, 4) + "年" + time.substring(5, 7) + "月" + time.substring(8, 10) + "日 " + time.substring(11, 19)
+        item.createTime = time
+        item.open = false
+        item.isRead = false
+      }
+      this.setData({
+        billboardList: list
+      })
+    })
+    .catch(data => {
+      wx.showToast({
+        title: '公告获取失败',
+        icon: 'none'
+      })
+      console.log(data)
+    })
   },
   data: {
-    list: [
-      {
-        id: 'view',
-        name: '公告1...',
-        open: false,
-        isRead: false,
-        //pages: ['view', 'scroll-view', 'swiper', 'movable-view', 'cover-view']
-      }, {
-        id: 'content',
-        name: '公告2...',
-        open: false,
-        isRead: false,
-        //pages: ['text', 'icon', 'progress', 'rich-text']
-      }, {
-        id: 'form',
-        name: '公告3...',
-        open: false,
-        isRead: false,
-        //pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'picker-view', 'radio', 'slider', 'switch', 'textarea', 'editor']
-      }, {
-        id: 'nav',
-        name: '公告4...',
-        open: false,
-        isRead: false,
-        //pages: ['navigator']
-      }, {
-        id: 'media',
-        name: '公告5...',
-        open: false,
-        isRead: false,
-        //pages: ['image', 'audio', 'video', 'camera']
-      }, {
-        id: 'map',
-        name: '公告6...',
-        open: false,
-        isRead: false,
-        //pages: ['map']
-      }, {
-        id: 'canvas',
-        name: '公告7...',
-        open: false,
-        isRead: false,
-        //pages: ['canvas']
-      }, {
-        id: 'open',
-        name: '公告8...',
-        open: false,
-        isRead: false,
-        //pages: ['ad', 'open-data', 'web-view']
-      }
-    ]
+    date: '',
+    billboardList: [],
   },
 
   goToEditPage:function(){
@@ -84,7 +71,7 @@ Page({
   
   kindToggle(e) {
     const id = e.currentTarget.id
-    const list = this.data.list
+    const list = this.data.billboardList
     for (let i = 0, len = list.length; i < len; ++i) {
       if (list[i].id === id) {
         list[i].open = !list[i].open
@@ -94,8 +81,7 @@ Page({
       }
     }
     this.setData({
-      list
+      billboardList: list
     })
-    wx.reportAnalytics('click_view_programmatically', {})
   }
 })
