@@ -3,6 +3,7 @@ const app = getApp()
 
 
 Page({
+
   onLoad: function () {
     let date = new Date()
     this.setData({
@@ -47,6 +48,7 @@ Page({
       console.log(data)
     })
   },
+
   data: {
     date: '',
     billboardList: [],
