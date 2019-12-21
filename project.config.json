@@ -95,6 +95,13 @@
 					"pathName": "page/weui/example/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "请假",
+					"pathName": "page/API/pages/action-sheet/action-sheet",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

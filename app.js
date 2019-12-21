@@ -42,27 +42,25 @@ App({
   //微信小程序启动执行的代码
   onLaunch: function () {
     //获取用户信息，必须是在用户已经授权的情况下调用
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          console.log('已授权用户信息')
-          wx.getUserInfo({
-            success: function (res) {
-              wx.setStorageSync('rawData', res.rawData)
-              //console.log(res.rawData)
-              wx.setStorageSync('userInfo', res.userInfo)
-              //console.log(res.userInfo)
-              wx.setStorageSync('signature', res.signature)
-              wx.setStorageSync('encryptedData', res.encryptedData)
-              wx.setStorageSync('iv', res.iv)
-            }
-          })
-        }
+    wx.getUserInfo({
+      success: function (res) {
+        console.log('获取用户信息成功')
+        wx.setStorageSync('rawData', res.rawData)
+        //console.log(res.rawData)
+        wx.setStorageSync('userInfo', res.userInfo)
+        //console.log(res.userInfo)
+        wx.setStorageSync('signature', res.signature)
+        wx.setStorageSync('encryptedData', res.encryptedData)
+        wx.setStorageSync('iv', res.iv)
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '获取用户信息失败',
+          icon: 'none'
+        })
+        console.log(res)
       }
     })
-
-    
 
     // 微信主体登录
     wx.login({

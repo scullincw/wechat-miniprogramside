@@ -4,18 +4,13 @@
   margin-right: 30rpx;
 }
 
-.weui-agree__link {
-  display: inline;
-  color: #586c94;
-}
-
 .block {
-margin-bottom: 23rpx;
-padding: 50rpx 20rpx;
-background-color: white;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  margin-bottom: 23rpx;
+  padding: 50rpx 40rpx;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 text {
@@ -23,13 +18,11 @@ font-size: 18px;
 margin: 0rpx 30rpx;
 }
 
-.avatar {
-  width: 120rpx;
-  height: 120rpx;
+#nickname {
+  font-size: 18px;
 }
 
-.right-arrow {
-height: 22px;
-width: 22px;
-
+#avatar {
+  width: 110rpx;
+  height: 110rpx;
 }
