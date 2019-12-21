@@ -11,6 +11,6 @@
     </button>
     
     <view class="text" style="text-align:center">
-        <text>已签到人数：100/300</text>
+        <text>已签到人数：{{checkInNum}} / {{totalNum}}</text>
     </view>
 </view>
