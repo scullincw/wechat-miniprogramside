@@ -1,5 +1,19 @@
 @import "../common/index.wxss";
 
+.index-hd {
+  padding: 10rpx;
+}
+
+.delete-view {
+  margin-top: 10rpx;
+  width: 95%;
+  text-align: right;
+}
+
+.delete-text {
+  color: red;
+}
+
 .weui-agree__link {
   display: inline;
   color: #586c94;

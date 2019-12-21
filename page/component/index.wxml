@@ -25,6 +25,9 @@
               <view>
                 {{item.billboardContent}}
               </view>
+              <view id="{{item.id}}" wx:if="{{isAdmin}}" class="delete-view" bindtap="onDeleteBillboard">
+                <text class="delete-text">删除</text>
+              </view>
             </view>
           </view>
         </view>

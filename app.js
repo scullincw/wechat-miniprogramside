@@ -84,9 +84,9 @@ App({
           )
             .then(res => {
               //请求成功
-              console.log('openid: ' + res.data.data.openid)
-              console.log('session_key: ' + res.data.data.session_key)
-              console.log('skey: ' + res.data.data.skey)
+              //console.log('openid: ' + res.data.data.openid)
+              //console.log('session_key: ' + res.data.data.session_key)
+              //console.log('skey: ' + res.data.data.skey)
               //将请求返回的结果存储下来
               wx.setStorageSync('openid', res.data.data.openid)
               wx.setStorageSync('session_key', res.data.data.session_key)
