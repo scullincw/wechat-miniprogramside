@@ -18,7 +18,7 @@
       </view>
     </view>
     <view class='button'>
-      <button type='primary' form-type='submit'>提交</button>
+      <button type='primary' form-type='submit' bindtap="onSubmit">提交</button>
     </view>
   </form>
 </view>
