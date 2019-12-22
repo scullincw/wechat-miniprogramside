@@ -1,6 +1,8 @@
 <!--page/component/pages/edit/edit.wxml-->
 <view class="main">
-  <textarea class="textareaType2" placeholder="请输入公告标题..." placeholder-style="font-size:35rpx" auto-focus="true"></textarea>
-  <textarea class="textareaType1" placeholder="请输入公告内容..." placeholder-style="font-size:35rpx" auto-focus="true"></textarea>
-  <button type="primary">提交</button>
+  <form bindsubmit="onSubmit">
+    <textarea class="textareaType2" placeholder="请输入公告标题" placeholder-style="font-size:35rpx" auto-focus="true" name="title" value="{{formInput}}"></textarea>
+    <textarea class="textareaType1" placeholder="请输入公告内容" placeholder-style="font-size:35rpx" name="content" value="{{formInput}}"></textarea>
+    <button type="primary" form-type="submit">提交</button>
+  </form>
 </view>

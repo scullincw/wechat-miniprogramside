@@ -6,6 +6,17 @@
   justify-content: center;
   align-items: center;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  padding: 15rpx;
+  background-color: whitesmoke;
+}
+
 .textareaType1{
   margin: 20rpx;
   height:250rpx;

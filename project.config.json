@@ -102,6 +102,13 @@
 					"pathName": "page/API/pages/action-sheet/action-sheet",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "编辑公告",
+					"pathName": "page/component/pages/edit/edit",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

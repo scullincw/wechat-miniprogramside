@@ -1,66 +1,54 @@
 // page/component/pages/edit/edit.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    formInput: ''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onSubmit(e) {
+    const input = e.detail.value
+    //检查表单内容
+    if(input.title == '') {
+      wx.showToast({
+        title: '请输入公告标题',
+        icon: 'none'
+      })
+      return
+    }
+    if (input.content == '') {
+      wx.showToast({
+        title: '请输入公告内容',
+        icon: 'none'
+      })
+      return
+    }
 
-  },
+    // //提交公告到服务端
+    // app.post(
+    //   'addBillboard',
+    //   {
+    //     openid: wx.getStorageSync('openid'),
+    //     skey: wx.getStorageSync('skey'),
+    //   }
+    //   .then(res => {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    //   })
+    //   .catch(res => {
 
-  },
+    //   })
+    // )
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    wx.showToast({
+      title: '提交成功',
+    })
+    //清空表单填写内容
+    this.setData({
+      formInput: ''
+    })
   }
 })
