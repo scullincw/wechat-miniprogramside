@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    forminput: '',
     longitude: 0,
     latitude: 0,
     isClick: false
@@ -25,6 +26,10 @@ Page({
       })
       return
     }
+
+    this.setData({
+      forminput: '',
+    })
     wx.showToast({
       title: '提交成功',
     })

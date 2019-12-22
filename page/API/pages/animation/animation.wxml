@@ -5,7 +5,7 @@
     <view class="weui-cells__title">申请人姓名</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
-        <input class="weui-input" type="number" placeholder="请输入姓名" name="name" focus="true" />
+        <input class="weui-input" type="number" placeholder="请输入姓名" name="name" focus="true"  value="{{forminput}}"/>
       </view>
     </view>
     </view>
@@ -13,7 +13,7 @@
       <view class="weui-cells__title">申请理由</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" type="text" placeholder="请输入报销事项" name="message"/>
+          <input class="weui-input" type="text" placeholder="请输入报销事项" name="message"  value="{{forminput}}"/>
         </view>
       </view>
     </view>
@@ -21,7 +21,7 @@
     <view class="weui-cells__title">报销金额</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
-        <input class="weui-input" type="number" placeholder="请输入报销金额(RMB)" name="name" focus="true" />
+        <input class="weui-input" type="number" placeholder="请输入报销金额(RMB)" name="money" focus="true" value="{{forminput}}"/>
       </view>
     </view>
     </view>

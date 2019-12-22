@@ -16,11 +16,11 @@ Page({
       date: date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日"
     })
     
-    this.getBillboard(true)
+    this.getBillboard()
   },
 
   /*从服务端获取公告列表*/
-  getBillboard(isInit) {
+  getBillboard() {
     app.post(
       'getBillboard',
       {
@@ -44,7 +44,7 @@ Page({
           item.createTime = time
           item.open = false //默认公告不打开详情
 
-          if (isInit) {
+          if (item.isRead == undefined) {
             //如果是初次加载，将所有通知标为未读
             item.isRead = false
           } else {
@@ -52,6 +52,7 @@ Page({
             item.isRead = this.data.billboardList[i].isRead
           }
         }
+        //刷新数据
         this.setData({
           billboardList: list
         })
@@ -102,7 +103,21 @@ Page({
   /*删除公告*/
   onDeleteBillboard(e) {
     console.log(e.currentTarget.id)
-    /*
+    //保存本地的公告已读状态
+    let readList = []
+    let billboardList = this.data.billboardList
+    for(let i = 0; i < billboardList.length; i++) {
+      let item = billboardList[i]
+      if(item.isRead & item.id != e.currentTarget.id) {
+        readList.push({
+          id: item.id,
+          isRead: item.isRead
+        })
+      }
+    }
+    //console.log(readList)
+
+    //向服务端请求删除公告
     app.post(
       'deleteBillboard',
       {
@@ -112,17 +127,27 @@ Page({
       }
     )
     .then(res => {
+      let responseList = res.data.data
+      //更新列
+      for (let i = 0; i < responseList.length; i++) {
+        let item = responseList[i]
+        var time = item.createTime
+        time = time.substring(0, 4) + "年" + time.substring(5, 7) + "月" + time.substring(8, 10) + "日 "/* + time.substring(11, 19)*/
+        item.createTime = time
+        item.open = false //默认公告不打开详情
+        item.isRead = false //首先将所有公告设为未读
+      }
+      //恢复公告的已读状态
+      for (let i = 0; i < readList.length; i++) {
+        responseList[readList[i].id].isRead = readList[i].isRead
+      }
+      console.log(responseList)
+
+      //刷新数据
       this.setData({
-        billboardList: res.data.data
+        billboardList: responseList
       })
     })
-    */
-    let list = this.data.billboardList
-    list.splice(e.currentTarget.id - 1, 1)
-    this.setData({
-      billboardList: list
-    })
-    
-    //this.onPullDownRefresh()
+
   }
 })

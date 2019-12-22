@@ -5,7 +5,7 @@
     <view class="weui-cells__title">申请人姓名</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
-        <input class="weui-input" type="number" placeholder="请输入姓名" name="name" focus="true" />
+        <input class="weui-input" type="number" placeholder="请输入姓名" name="name" focus="true"  value="{{forminput}}"/>
       </view>
     </view>
     </view>
@@ -13,7 +13,7 @@
       <view class="weui-cells__title">申请理由</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" type="text" placeholder="请输入使用用途" name="message"/>
+          <input class="weui-input" type="text" placeholder="请输入使用用途" name="message"  value="{{forminput}}"/>
         </view>
       </view>
     </view>

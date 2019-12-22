@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    forminput: '',
+    longitude: 0,
+    latitude: 0,
+    isClick: false,
     block:"文泰楼",
     room:101,
     multiIndex: [0,0],
@@ -19,6 +23,43 @@ Page({
       room: that.data.array[1][e.detail.value[1]]
     })
   },
+
+  onSubmit: function (e) {
+    const inputVal = e.detail.value
+    if (inputVal.name == '') {
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none'
+      })
+      return
+    }
+    if (inputVal.message == '') {
+      wx.showToast({
+        title: '请输入请假理由',
+        icon: 'none'
+      })
+      return
+    }
+
+    this.setData({
+      forminput: '',
+    })
+    wx.showToast({
+      title: '提交成功',
+    })
+  },
+
+  change: function () {
+    var click = this.data.click;
+    this.setData({
+      isClick: true
+    })
+
+    wx.showToast({
+      title: '提交成功',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

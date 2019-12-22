@@ -109,6 +109,12 @@
 					"pathName": "page/component/pages/edit/edit",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "报销",
+					"pathName": "page/API/pages/animation/animation",
+					"scene": null
 				}
 			]
 		}

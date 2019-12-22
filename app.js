@@ -26,9 +26,8 @@ App({
           }
           else {
             reject(res.data)
-            if (res.data.msg != null) {
-              console.log('错误信息:' + res.data.msg) //打印错误信息
-            }
+            console.log('错误信息:') //打印错误信息
+            console.log(res.data)
           }
         },
         fail: function (e) {

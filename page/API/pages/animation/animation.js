@@ -5,7 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
+    forminput: '',
+    longitude: 0,
+    latitude: 0,
+    isClick: false
+  },
 
+  onSubmit: function (e) {
+    const inputVal = e.detail.value
+    if (inputVal.name == '') {
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none'
+      })
+      return
+    }
+    if (inputVal.message == '') {
+      wx.showToast({
+        title: '请输入请假理由',
+        icon: 'none'
+      })
+      return
+    }
+    if (inputVal.money == '') {
+      wx.showToast({
+        title: '请输入报销金额',
+        icon: 'none'
+      })
+      return
+    }
+    this.setData({
+      forminput: '',
+    })
+    wx.showToast({
+      title: '提交成功',
+    })
+  },
+
+  change: function () {
+    var click = this.data.click;
+    this.setData({
+      isClick: true
+    })
+
+    wx.showToast({
+      title: '提交成功',
+    })
   },
 
   /**
