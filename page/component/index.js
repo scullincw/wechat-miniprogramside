@@ -8,6 +8,7 @@ Page({
     isAdmin: true,
     currentBillboardId: 1,
     billboardList: [],
+    readList: []
   },
 
   onLoad() {
@@ -21,6 +22,22 @@ Page({
 
   /*从服务端获取公告列表*/
   getBillboard() {
+    //如果有本地公告列表，先保存已读状态
+    let list = this.data.billboardList
+    if(list != null) {
+      let readList = []
+      for(let i = 0; i < list.length; i++) {
+        let item = list[i]
+        //如果当前公告是已读的，保存它的id到readList
+        if (item.isRead) {
+          readList.push(item.id)
+        }
+        
+      }
+      this.setData({
+        readList: readList
+      })
+    }
     app.post(
       'getBillboard',
       {
@@ -43,13 +60,12 @@ Page({
           time = time.substring(0, 4) + "年" + time.substring(5, 7) + "月" + time.substring(8, 10) + "日 "/* + time.substring(11, 19)*/
           item.createTime = time
           item.open = false //默认公告不打开详情
-
-          if (item.isRead == undefined) {
-            //如果是初次加载，将所有通知标为未读
-            item.isRead = false
-          } else {
-            //如果不是初次加载，保存公告的已读状态
-            item.isRead = this.data.billboardList[i].isRead
+          item.isRead = false //默认未读
+          //恢复已读状态
+          for (let i = 0; i < this.data.readList.length; i++) {
+            if (this.data.readList[i] == item.id) {
+              item.isRead = true
+            }
           }
         }
         //刷新数据
@@ -75,7 +91,7 @@ Page({
   /*下拉刷新 */
   onPullDownRefresh() {
     wx.showNavigationBarLoading() //在标题栏中显示加载
-    this.getBillboard(false) //获取列表
+    this.getBillboard() //获取列表
     wx.hideNavigationBarLoading() //完成停止加载
     wx.stopPullDownRefresh() //停止下拉刷新
   },
@@ -102,21 +118,6 @@ Page({
 
   /*删除公告*/
   onDeleteBillboard(e) {
-    console.log(e.currentTarget.id)
-    //保存本地的公告已读状态
-    let readList = []
-    let billboardList = this.data.billboardList
-    for(let i = 0; i < billboardList.length; i++) {
-      let item = billboardList[i]
-      if(item.isRead & item.id != e.currentTarget.id) {
-        readList.push({
-          id: item.id,
-          isRead: item.isRead
-        })
-      }
-    }
-    //console.log(readList)
-
     //向服务端请求删除公告
     app.post(
       'deleteBillboard',
@@ -126,28 +127,7 @@ Page({
         id: e.currentTarget.id
       }
     )
-    .then(res => {
-      let responseList = res.data.data
-      //更新列
-      for (let i = 0; i < responseList.length; i++) {
-        let item = responseList[i]
-        var time = item.createTime
-        time = time.substring(0, 4) + "年" + time.substring(5, 7) + "月" + time.substring(8, 10) + "日 "/* + time.substring(11, 19)*/
-        item.createTime = time
-        item.open = false //默认公告不打开详情
-        item.isRead = false //首先将所有公告设为未读
-      }
-      //恢复公告的已读状态
-      for (let i = 0; i < readList.length; i++) {
-        responseList[readList[i].id].isRead = readList[i].isRead
-      }
-      console.log(responseList)
-
-      //刷新数据
-      this.setData({
-        billboardList: responseList
-      })
-    })
-
+    //刷新页面
+    this.onPullDownRefresh()
   }
 })
