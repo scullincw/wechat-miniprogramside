@@ -76,8 +76,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "page/API/pages/bluetooth/bluetooth",
+					"id": 3,
+					"name": "审批",
 					"pathName": "page/API/pages/bluetooth/bluetooth",
 					"query": "",
 					"scene": null
@@ -114,6 +114,14 @@
 					"id": -1,
 					"name": "报销",
 					"pathName": "page/API/pages/animation/animation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "审批",
+					"pathName": "page/API/pages/bluetooth/bluetooth",
+					"query": "",
 					"scene": null
 				}
 			]

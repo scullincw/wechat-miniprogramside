@@ -9,6 +9,10 @@ page {
   margin-bottom: 20rpx;
 }
 
+textarea {
+  height: 50px;
+}
+
 input {
   padding: 10rpx;
 }
@@ -22,7 +26,16 @@ button {
   color: #586c94;
 }
 
-.kind-list-img{
-  width: 15rpx;
-  height: 15rpx;
+.image-box {
+  display: flex;
+  align-items: center;
+}
+
+image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.kind-list-item-bd {
+  padding: 0rpx 30rpx;
 }
