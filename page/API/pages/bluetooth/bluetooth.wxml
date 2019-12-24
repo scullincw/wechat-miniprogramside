@@ -11,7 +11,7 @@
           </view>
           <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
             <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
-              <textarea>{{item.appContent}}</textarea>
+              <view class="app-content">{{item.appContent}}</view>
               <view wx:if="{{item.additionalContent != null}}">
                 {{item.additionalContent}}
               </view>

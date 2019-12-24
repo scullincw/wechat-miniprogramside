@@ -10,7 +10,7 @@ page {
   margin-bottom: 20rpx;
 }
 
-textarea {
+.app-content {
   height: 50px;
 }
 

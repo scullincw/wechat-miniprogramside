@@ -6,7 +6,7 @@ App({
     var promise = new Promise((resolve, reject) => {
       var postData = data
       wx.request({
-        url: 'http://localhost:8081/wechat/' + uri,
+        url: 'http://10.169.34.70:8081/wechat/' + uri,
         data: postData,
         header: {
           'content-type': 'application/x-www-form-urlencoded'
