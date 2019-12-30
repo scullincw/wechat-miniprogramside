@@ -18,7 +18,6 @@ button {
 }
 
 .picker{
-  color:rgba(0,0,0,.5);
   background-color: white;
   padding: 6rpx 20rpx;
 }

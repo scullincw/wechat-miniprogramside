@@ -69,23 +69,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "page/component/pages/edit/edit",
-					"pathName": "page/component/pages/edit/edit",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 3,
 					"name": "审批",
 					"pathName": "page/API/pages/bluetooth/bluetooth",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "page/cloud/pages/crud/crud",
-					"pathName": "page/cloud/pages/crud/crud",
 					"query": "",
 					"scene": null
 				},
@@ -121,6 +107,13 @@
 					"id": -1,
 					"name": "审批",
 					"pathName": "page/API/pages/bluetooth/bluetooth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会议室预约",
+					"pathName": "page/API/pages/background-audio/background-audio",
 					"query": "",
 					"scene": null
 				}

@@ -15,8 +15,10 @@
               <view wx:if="{{item.additionalContent != null}}">
                 {{item.additionalContent}}
               </view>
-              <button type="primary" bindtap="onSubmit" id="{{item.id}}" data-result="approved">同意</button>
-              <button type="warn" bindtap="onSubmit" id="{{item.id}}" data-result="deny">拒绝</button>
+              <view wx:if="{{!item.isRead}}">
+                <button type="primary" bindtap="onSubmit" id="{{item.id}}" data-result="approved">同意</button>
+                <button type="warn" bindtap="onSubmit" id="{{item.id}}" data-result="deny">拒绝</button>
+              </view>
             </view>
           </view>
         </view>
