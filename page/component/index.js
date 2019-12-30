@@ -4,14 +4,17 @@ const app = getApp()
 
 Page({
   data: {
+    identity: 0,
     date: '',
-    isAdmin: true,
     currentBillboardId: 1,
     billboardList: [],
     readList: []
   },
 
   onLoad() {
+    this.setData({
+      identity: wx.getStorageSync('identity')
+    })
     let date = new Date()
     this.setData({
       date: date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日"

@@ -3,6 +3,10 @@ const app = getApp()
 
 Page({
   onLoad() {
+    this.setData({
+      identity: wx.getStorageSync('identity')
+    })
+    //获取申请列表
     app.post(
       'getApplication',
       {
@@ -38,7 +42,7 @@ Page({
   },
   data: {
     applicationList: [],  //申请列表
-    
+    identity: 0 //身份，0是普通用户，1是管理员，默认为0
   },
 
   /*下拉刷新 */

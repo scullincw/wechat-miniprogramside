@@ -12,10 +12,10 @@
           <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
             <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
               <view class="app-content">{{item.appContent}}</view>
-              <view wx:if="{{item.additionalContent != null}}">
+              <view wx:if="{{item.additionalContent != null}}" class="add-content">
                 {{item.additionalContent}}
               </view>
-              <view wx:if="{{!item.isRead}}">
+              <view wx:if="{{!item.isRead && identity == 1}}">
                 <button type="primary" bindtap="onSubmit" id="{{item.id}}" data-result="approved">同意</button>
                 <button type="warn" bindtap="onSubmit" id="{{item.id}}" data-result="deny">拒绝</button>
               </view>

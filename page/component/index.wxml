@@ -3,7 +3,7 @@
     <image class="index-logo" src="resources/kind/logo.png"></image>
     <view>{{date}}</view>
   </view>
-  <view>
+  <view wx:if="{{identity == 1}}">
     <button type="default" bindtap="goToEditPage">编辑公告</button>
   </view>
 
@@ -25,7 +25,7 @@
               <view>
                 {{item.billboardContent}}
               </view>
-              <view id="{{item.id}}" wx:if="{{isAdmin}}" class="delete-view" bindtap="onDeleteBillboard">
+              <view id="{{item.id}}" wx:if="{{identity == 1}}" class="delete-view" bindtap="onDeleteBillboard">
                 <text class="delete-text">删除</text>
               </view>
             </view>

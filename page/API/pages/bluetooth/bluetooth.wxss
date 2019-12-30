@@ -36,6 +36,10 @@ image {
   height: 60rpx;
 }
 
+ .add-content {
+   padding-bottom: 20rpx;
+ }
+
 .kind-list-item-bd {
   padding: 0rpx 30rpx;
 }
